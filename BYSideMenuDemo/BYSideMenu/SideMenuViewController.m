@@ -19,8 +19,4 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)dealloc {
-    NSLog(@"MenuVC--dealloc");
-}
-
 @end

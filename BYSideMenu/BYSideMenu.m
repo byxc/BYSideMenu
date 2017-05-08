@@ -310,10 +310,6 @@
     return YES;
 }
 
-- (void)dealloc {
-    NSLog(@"BYSideMenu-dealloc");
-}
-
 @end
 
 @implementation UIViewController (BYSideMenuVC)

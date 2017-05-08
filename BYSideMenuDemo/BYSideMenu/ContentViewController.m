@@ -77,8 +77,4 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)dealloc {
-    NSLog(@"ViewController--dealloc");
-}
-
 @end
