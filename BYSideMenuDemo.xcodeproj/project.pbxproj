@@ -338,6 +338,7 @@
 				76E1EAAA1EBF606400E3EF20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
