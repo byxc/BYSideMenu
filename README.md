@@ -1,13 +1,29 @@
 # BYSideMenu
 一个简单好用的侧边栏
 # 使用方法
-1.将文件加入到工程中，在需要使用的文件中导入头文件
+1.导入
 
-2.使用如下构造方法创建侧边栏控制器
+(1). 使用手动方式导入
+
+下载BYSideMenu中的所有文件
+
+将BYSideMenu中的源文件导入到工程中
+
+导入`BYSideMenu.h`文件。
+
+(2). 使用CocoaPods导入
+
+在Podfile中添加`pod 'BYSideMenu'`
+
+执行`Pod install` 或者 `Pod update`
+
+使用`#import <BYSideMenu/BYSideMenu.h>`导入
+
+2.使用并创建侧边栏控制器
 
 ```BYSideMenu *sideMenu = [[BYSideMenu alloc] initWithContentController:contentVC sideViewController:sideVC]; ```
 
-3.可设属性
+3.设置属性
 
 ```
 // 动画时间(默认：0.3s)
