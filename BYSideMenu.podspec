@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 
   s.source       = {:git => "https://github.com/Byxc/BYSideMenu.git", :tag => "1.0.0" }
 
-  s.source_files  = "BYSideMenuDemo/BYSideMenu/*.{h,m}"
+  s.source_files  = "BYSideMenu/BYSideMenu/*.{h,m}"
   s.exclude_files = ""
 
   s.framework  = "UIKit"

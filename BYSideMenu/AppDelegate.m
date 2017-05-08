@@ -1,8 +1,8 @@
 //
 //  AppDelegate.m
-//  BYSideMenuDemo
+//  BYSideMenu
 //
-//  Created by 白云 on 2017/5/7.
+//  Created by 白云 on 2017/5/8.
 //  Copyright © 2017年 白云. All rights reserved.
 //
 
