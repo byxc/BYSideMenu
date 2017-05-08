@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
 
   s.homepage     = "https://github.com/Byxc/BYSideMenu.git"
 
-  s.license      = "MIT"
+  s.license      = " Apache"
 
   s.author             = { "白云心城" => "924698172@qq.com" }
 
