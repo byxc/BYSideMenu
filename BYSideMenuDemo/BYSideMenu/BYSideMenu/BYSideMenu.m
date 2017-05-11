@@ -79,6 +79,7 @@
     UIScreenEdgePanGestureRecognizer *edgePan = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(edgePanOfContentView:)];
     UIRectEdge rectEdge = (_sideType&1) == 0 ? UIRectEdgeLeft:UIRectEdgeRight;
     edgePan.edges = rectEdge;
+    edgePan.delegate = self;
     [self.view addGestureRecognizer:edgePan];
     self.edgePan = edgePan;
 }
@@ -307,7 +308,17 @@
 
 #pragma mark - UIGestureRecognizerDelegate
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
-    return YES;
+    if ([gestureRecognizer isKindOfClass:[UIScreenEdgePanGestureRecognizer class]]) {
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    if ([gestureRecognizer isKindOfClass:[UIScreenEdgePanGestureRecognizer class]]) {
+        return YES;
+    }
+    return NO;
 }
 
 @end
