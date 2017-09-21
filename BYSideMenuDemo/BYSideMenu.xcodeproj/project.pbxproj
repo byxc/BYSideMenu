@@ -13,9 +13,9 @@
 		76113B661EC012BD00DF47B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76113B641EC012BD00DF47B5 /* Main.storyboard */; };
 		76113B681EC012BD00DF47B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76113B671EC012BD00DF47B5 /* Assets.xcassets */; };
 		76113B6B1EC012BD00DF47B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76113B691EC012BD00DF47B5 /* LaunchScreen.storyboard */; };
-		76113B791EC0133A00DF47B5 /* BYSideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 76113B741EC0133A00DF47B5 /* BYSideMenu.m */; };
 		76113B7A1EC0133A00DF47B5 /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76113B761EC0133A00DF47B5 /* ContentViewController.m */; };
 		76113B7B1EC0133A00DF47B5 /* SideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76113B781EC0133A00DF47B5 /* SideMenuViewController.m */; };
+		C5FA26691F735CB9009776F1 /* BYSideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FA26681F735CB9009776F1 /* BYSideMenu.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,12 +29,12 @@
 		76113B671EC012BD00DF47B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76113B6A1EC012BD00DF47B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76113B6C1EC012BD00DF47B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		76113B731EC0133A00DF47B5 /* BYSideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYSideMenu.h; sourceTree = "<group>"; };
-		76113B741EC0133A00DF47B5 /* BYSideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYSideMenu.m; sourceTree = "<group>"; };
 		76113B751EC0133A00DF47B5 /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
 		76113B761EC0133A00DF47B5 /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
 		76113B771EC0133A00DF47B5 /* SideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuViewController.h; sourceTree = "<group>"; };
 		76113B781EC0133A00DF47B5 /* SideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuViewController.m; sourceTree = "<group>"; };
+		C5FA26671F735CB9009776F1 /* BYSideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYSideMenu.h; sourceTree = "<group>"; };
+		C5FA26681F735CB9009776F1 /* BYSideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYSideMenu.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +67,7 @@
 		76113B5A1EC012BD00DF47B5 /* BYSideMenu */ = {
 			isa = PBXGroup;
 			children = (
-				76113B721EC0133A00DF47B5 /* BYSideMenu */,
+				C5FA26661F735CB9009776F1 /* BYSideMenu */,
 				76113B751EC0133A00DF47B5 /* ContentViewController.h */,
 				76113B761EC0133A00DF47B5 /* ContentViewController.m */,
 				76113B771EC0133A00DF47B5 /* SideMenuViewController.h */,
@@ -93,13 +93,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		76113B721EC0133A00DF47B5 /* BYSideMenu */ = {
+		C5FA26661F735CB9009776F1 /* BYSideMenu */ = {
 			isa = PBXGroup;
 			children = (
-				76113B731EC0133A00DF47B5 /* BYSideMenu.h */,
-				76113B741EC0133A00DF47B5 /* BYSideMenu.m */,
+				C5FA26671F735CB9009776F1 /* BYSideMenu.h */,
+				C5FA26681F735CB9009776F1 /* BYSideMenu.m */,
 			);
-			path = BYSideMenu;
+			name = BYSideMenu;
+			path = ../../BYSideMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,8 +176,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				76113B7B1EC0133A00DF47B5 /* SideMenuViewController.m in Sources */,
-				76113B791EC0133A00DF47B5 /* BYSideMenu.m in Sources */,
 				76113B7A1EC0133A00DF47B5 /* ContentViewController.m in Sources */,
+				C5FA26691F735CB9009776F1 /* BYSideMenu.m in Sources */,
 				76113B631EC012BD00DF47B5 /* ViewController.m in Sources */,
 				76113B601EC012BD00DF47B5 /* AppDelegate.m in Sources */,
 				76113B5D1EC012BD00DF47B5 /* main.m in Sources */,
