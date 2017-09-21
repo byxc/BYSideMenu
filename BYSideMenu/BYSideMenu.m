@@ -192,11 +192,21 @@
     CGPoint offset = [edgePan translationInView:self.view];
     CGRect contentFrame = _contentViewController.view.frame;
     contentFrame.origin.x = offset.x;
-    if ((_sideType&1) == 0 && contentFrame.origin.x > _sideViewWidth) {
-        contentFrame.origin.x = _sideViewWidth;
+    if ((_sideType&1) == 0) {
+        if (contentFrame.origin.x > _sideViewWidth) {
+            contentFrame.origin.x = _sideViewWidth;
+        }
+        else if (contentFrame.origin.x < 0) {
+            contentFrame.origin.x = 0;
+        }
     }
-    else if ((_sideType&1) == 1 && contentFrame.origin.x < -_sideViewWidth){
-        contentFrame.origin.x = -_sideViewWidth;
+    else if ((_sideType&1) == 1) {
+        if (contentFrame.origin.x < -_sideViewWidth) {
+            contentFrame.origin.x = -_sideViewWidth;
+        }
+        else if (contentFrame.origin.x > 0) {
+            contentFrame.origin.x = 0;
+        }
     }
     CGRect sideFrame = _sideViewController.view.frame;
     sideFrame.origin.x = (_sideType&1) == 0 ? contentFrame.origin.x-_sideViewWidth:contentFrame.origin.x+contentFrame.size.width;
