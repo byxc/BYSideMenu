@@ -94,11 +94,11 @@
     self.pan = pan;
 }
 
-- (void)showSideMenuCompleted:(void(^)())completedHandle {
+- (void)showSideMenuCompleted:(void(^)(void))completedHandle {
     [self showSideMenuWithAnimation:YES completed:completedHandle];
 }
 
-- (void)showSideMenuWithAnimation:(BOOL)animation completed:(void(^)())completedHandle {
+- (void)showSideMenuWithAnimation:(BOOL)animation completed:(void(^)(void))completedHandle {
     CGRect contentFrame = _contentViewController.view.frame;
     contentFrame.origin.x = [self contentOffsetX];
     CGRect sideFrame = _sideViewController.view.frame;
@@ -107,18 +107,19 @@
         if (!_allowTransition) {
             _sideViewController.view.alpha = 1;
         }
+        __weak typeof(self) weakSelf = self;
         [UIView animateWithDuration:_animationTime animations:^{
-            _sideViewController.view.frame = sideFrame;
-            if (_allowTransition) {
-                _sideViewController.view.alpha = 1;
+            weakSelf.sideViewController.view.frame = sideFrame;
+            if (weakSelf.allowTransition) {
+                weakSelf.sideViewController.view.alpha = 1;
             }
-            if (_sideType < BYSideTypeLeft) {
-                _contentViewController.view.frame = contentFrame;
+            if (weakSelf.sideType < BYSideTypeLeft) {
+                weakSelf.contentViewController.view.frame = contentFrame;
             }
         } completion:^(BOOL finished) {
-            _isSideViewShow = YES;
-            [_contentViewController.view addSubview:_contentButton];
-            _edgePan.enabled = NO;
+            weakSelf.isSideViewShow = YES;
+            [weakSelf.contentViewController.view addSubview:weakSelf.contentButton];
+            weakSelf.edgePan.enabled = NO;
             if (completedHandle != nil) {
                 completedHandle();
             }
@@ -137,29 +138,30 @@
     }
 }
 
-- (void)hiddenSideMenuCompleted:(void(^)())completedHandle {
+- (void)hiddenSideMenuCompleted:(void(^)(void))completedHandle {
     [self hiddenSideMenuWithAnimation:YES completed:completedHandle];
 }
 
-- (void)hiddenSideMenuWithAnimation:(BOOL)animation completed:(void(^)())completedHandle {
+- (void)hiddenSideMenuWithAnimation:(BOOL)animation completed:(void(^)(void))completedHandle {
     CGRect contentFrame = _contentViewController.view.frame;
     contentFrame.origin.x = 0;
     CGRect sideFrame = _sideViewController.view.frame;
     sideFrame.origin.x = (_sideType&1) == 0 ? contentFrame.origin.x-_sideViewWidth:contentFrame.origin.x+contentFrame.size.width;
     if (animation) {
+        __weak typeof(self) weakSelf = self;
         [UIView animateWithDuration:_animationTime animations:^{
-            _sideViewController.view.frame = sideFrame;
-            if (_allowTransition) {
-                _sideViewController.view.alpha = 0;
+            weakSelf.sideViewController.view.frame = sideFrame;
+            if (weakSelf.allowTransition) {
+                weakSelf.sideViewController.view.alpha = 0;
             }
-            if (_sideType < BYSideTypeLeft) {
-                _contentViewController.view.frame = contentFrame;
+            if (weakSelf.sideType < BYSideTypeLeft) {
+                weakSelf.contentViewController.view.frame = contentFrame;
             }
         } completion:^(BOOL finished) {
-            _isSideViewShow = NO;
-            _sideViewController.view.alpha = 0;
-            [_contentButton removeFromSuperview];
-            _edgePan.enabled = YES;
+            weakSelf.isSideViewShow = NO;
+            weakSelf.sideViewController.view.alpha = 0;
+            [weakSelf.contentButton removeFromSuperview];
+            weakSelf.edgePan.enabled = YES;
             if (completedHandle != nil) {
                 completedHandle();
             }

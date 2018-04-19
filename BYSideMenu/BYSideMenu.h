@@ -46,7 +46,7 @@ typedef NS_ENUM(NSUInteger, BYSideType) {
 
  @param completedHandle 完成回调
  */
-- (void)showSideMenuCompleted:(void(^)())completedHandle;
+- (void)showSideMenuCompleted:(void(^)(void))completedHandle;
 
 /**
  显示侧边栏视图
@@ -54,14 +54,14 @@ typedef NS_ENUM(NSUInteger, BYSideType) {
  @param animation 是否使用动画
  @param completedHandle 完成回调
  */
-- (void)showSideMenuWithAnimation:(BOOL)animation completed:(void(^)())completedHandle;
+- (void)showSideMenuWithAnimation:(BOOL)animation completed:(void(^)(void))completedHandle;
 
 /**
  隐藏侧边栏视图
  
  @param completedHandle 完成回调
  */
-- (void)hiddenSideMenuCompleted:(void(^)())completedHandle;
+- (void)hiddenSideMenuCompleted:(void(^)(void))completedHandle;
 
 /**
  隐藏侧边栏视图
@@ -69,7 +69,7 @@ typedef NS_ENUM(NSUInteger, BYSideType) {
  @param animation 是否使用动画
  @param completedHandle 完成回调
  */
-- (void)hiddenSideMenuWithAnimation:(BOOL)animation completed:(void(^)())completedHandle;
+- (void)hiddenSideMenuWithAnimation:(BOOL)animation completed:(void(^)(void))completedHandle;
 
 @end
 
