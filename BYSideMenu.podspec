@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = 'BYSideMenu'
-  s.version      = '1.0.4'
+  s.version      = '1.0.5'
   s.summary      = '快速实现侧边栏效果.'
   s.description  = '一个简单好用的侧边栏工具'
   s.homepage     = 'https://github.com/Byxc/BYSideMenu'
